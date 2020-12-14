@@ -1,0 +1,994 @@
+.root {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.base {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.settings {
+    width: max-content;
+    margin: auto;
+    text-align: center;
+}
+
+.settings_submit {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vw;
+}
+
+.playerInput {
+    width: 200px;
+}
+
+.sizeInput {
+    width: 200px;
+}
+
+.game {
+    text-align: center;
+    font-size: 2.5vw;
+    width: max-content;
+    margin: auto;
+}
+
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: max-content max-content max-content max-content;
+    grid-template-rows: max-content max-content max-content;
+}
+
+.game_info {
+    width: max-content;
+    padding: 0vw;
+    margin-top: 25%;
+}
+
+.game_info_div {
+    width: max-content;
+    height: max-content;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 1;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game_button {
+    width: max-content;
+    padding: 0vw;
+    margin-bottom: 0;
+}
+
+.game_button_div {
+    width: max-content;
+    height: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row: 1;
+}
+
+.game_new {
+    width: max-content;
+    height: max-content;
+    font-size: 2.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    margin-bottom: 0;
+    margin-top: 15%;
+}
+
+.game_new_div {
+    width: max-content;
+    height: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 5;
+}
+
+.game_board {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.game_board_div {
+    background-color: rgb(28, 134, 111);
+    position: relative;
+    width: 90vw;
+    height: 90vw;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    border: medium solid black;
+    border-radius: 10px;
+}
+
+.disc_border {
+    border: 0.15vw solid black;
+    border-radius: 100vw;
+    height: 4vw;
+    width: 4vw;
+    margin: auto;
+}
+
+.disc_borderless {
+    border-radius: 100vw;
+    height: 4vw;
+    width: 4vw;
+    margin: auto;
+}
+
+.white {
+    background-color: white;
+}
+
+.black {
+    background-color: black;
+}
+
+.winner {
+    background-color: rgb(103, 224, 103);
+}
+
+.row {
+    display: block;
+    width: max-content;
+    height: max-content;
+}
+
+.square  {
+    display: inline-block;
+    width: 4vw;
+    height: 4vw;
+    margin: 0.1vw;
+    text-align: center;
+    border: 0.14vw solid black;
+}
+
+.allowed {
+    background-color: rgb(20, 155, 20);
+}
+
+.hidden {
+    display: none;
+}
+
+@media only screen and (min-width: 640px) and (min-height: 360px) {
+
+    .game {
+        font-size: 1vw;
+    }
+    
+    .game_board_div {
+        width: 48vw;
+        height: 48vw;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .square  {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .disc_border {
+        height: 2vw;
+        width: 2vw;
+    }
+
+    .disc_borderless {
+        height: 2vw;
+        width: 2vw;
+    }
+
+    .game_info_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+    }
+
+    .game_info {
+        padding: 1vw;
+        margin-top: 100%;
+    }
+
+    .game_button_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 2;
+    }
+
+    .game_button {
+        padding: 1vw;
+        margin-bottom: 50%;
+    }
+
+    .game_new_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 3;
+    }
+
+    .game_new {
+        font-size: 1vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        margin-bottom: 100%;
+        margin-top: 0;
+    }
+    
+}
+
+@media only screen and (min-width: 800px) and (min-height: 600px) {
+
+    .game {
+        font-size: 1.5vw;
+    }
+    
+    .game_board_div {
+        width: 65vw;
+        height: 65vw;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .square  {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .disc_border {
+        height: 3vw;
+        width: 3vw;
+    }
+
+    .disc_borderless {
+        height: 3vw;
+        width: 3vw;
+    }
+
+    .game_info_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+    }
+
+    .game_info {
+        padding: 1vw;
+        margin-top: 100%;
+    }
+
+    .game_button_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 2;
+    }
+
+    .game_button {
+        padding: 1vw;
+        margin-bottom: 50%;
+    }
+
+    .game_new_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 3;
+    }
+
+    .game_new {
+        font-size: 1.5vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        margin-bottom: 100%;
+        margin-top: 0;
+    }
+
+}
+
+@media only screen and (min-width: 800px) and (min-height: 1280px) {
+
+    .game {
+        font-size: 2vw;
+    }
+    
+    .game_board_div {
+        width: 80vw;
+        height: 80vw;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 5;
+    }
+
+    .square  {
+        width: 3.8vw;
+        height: 3.8vw;
+    }
+
+    .disc_border {
+        height: 3.8vw;
+        width: 3.8vw;
+    }
+
+    .disc_borderless {
+        height: 3.8vw;
+        width: 3.8vw;
+    }
+
+    .game_info_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+    }
+
+    .game_info {
+        padding: 1vw;
+        margin-top: 5%;
+    }
+
+    .game_button_div {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row: 1;
+    }
+
+    .game_button {
+        padding: 1vw;
+        margin-bottom: 0;
+    }
+
+    .game_new_div {
+        margin-top: 2%;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row: 5;
+    }
+
+    .game_new {
+        font-size: 2vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        margin-bottom: 100%;
+        margin-top: 0;
+    }
+
+}
+
+@media only screen and (min-width: 1280px) and (min-height: 720px) {
+
+    .game {
+        font-size: 1vw;
+    }
+    
+    .game_board_div {
+        width: 48vw;
+        height: 48vw;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .square  {
+        width: 2.2vw;
+        height: 2.2vw;
+    }
+
+    .disc_border {
+        height: 2.2vw;
+        width: 2.2vw;
+    }
+
+    .disc_borderless {
+        height: 2.2vw;
+        width: 2.2vw;
+    }
+
+    .game_info_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+    }
+
+    .game_info {
+        padding: 1vw;
+        margin-top: 100%;
+    }
+
+    .game_button_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 2;
+    }
+
+    .game_button {
+        padding: 1vw;
+        margin-bottom: 50%;
+    }
+
+    .game_new_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 3;
+    }
+
+    .game_new {
+        font-size: 1vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        margin-bottom: 100%;
+        margin-top: 0;
+    }
+
+}
+
+@media only screen and (min-width: 1280px) and (min-height: 1024px) {
+
+    .game {
+        font-size: 1vw;
+    }
+    
+    .game_board_div {
+        width: 70vw;
+        height: 70vw;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .square  {
+        width: 3.4vw;
+        height: 3.4vw;
+    }
+
+    .disc_border {
+        height: 3.4vw;
+        width: 3.4vw;
+    }
+
+    .disc_borderless {
+        height: 3.4vw;
+        width: 3.4vw;
+    }
+
+    .game_info_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+    }
+
+    .game_info {
+        padding: 1vw;
+        margin-top: 100%;
+    }
+
+    .game_button_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 2;
+    }
+
+    .game_button {
+        padding: 1vw;
+        margin-bottom: 50%;
+    }
+
+    .game_new_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 3;
+    }
+
+    .game_new {
+        font-size: 1vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        margin-bottom: 100%;
+        margin-top: 0;
+    }
+
+}
+
+@media only screen and (min-width: 1680px) {
+
+    .game {
+        font-size: 1vw;
+    }
+    
+    .game_board_div {
+        width: 55vw;
+        height: 55vw;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .square  {
+        width: 2.5vw;
+        height: 2.5vw;
+    }
+
+    .disc_border {
+        height: 2.5vw;
+        width: 2.5vw;
+    }
+
+    .disc_borderless {
+        height: 2.5vw;
+        width: 2.5vw;
+    }
+
+    .game_info_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+    }
+
+    .game_info {
+        padding: 1vw;
+        margin-top: 100%;
+    }
+
+    .game_button_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 2;
+    }
+
+    .game_button {
+        padding: 1vw;
+        margin-bottom: 50%;
+    }
+
+    .game_new_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 3;
+    }
+
+    .game_new {
+        font-size: 1vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        margin-bottom: 100%;
+        margin-top: 0;
+    }
+
+}
+
+@media only screen and (min-width: 1920px) {
+
+    .game {
+        font-size: 1vw;
+    }
+    
+    .game_board_div {
+        width: 48vw;
+        height: 48vw;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .square  {
+        width: 2.2vw;
+        height: 2.2vw;
+    }
+
+    .disc_border {
+        height: 2.2vw;
+        width: 2.2vw;
+    }
+
+    .disc_borderless {
+        height: 2.2vw;
+        width: 2.2vw;
+    }
+
+    .game_info_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+    }
+
+    .game_info {
+        padding: 1vw;
+        margin-top: 100%;
+    }
+
+    .game_button_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 2;
+    }
+
+    .game_button {
+        padding: 1vw;
+        margin-bottom: 50%;
+    }
+
+    .game_new_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 3;
+    }
+
+    .game_new {
+        font-size: 1vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        margin-bottom: 100%;
+        margin-top: 0;
+    }
+
+}
+
+@media only screen and (min-width: 2560px) and (min-height: 1080px) {
+
+    .game {
+        font-size: 0.7vw;
+    }
+    
+    .game_board_div {
+        width: 40vw;
+        height: 40vw;
+    }
+
+    .square  {
+        width: 1.8vw;
+        height: 1.8vw;
+    }
+
+    .disc_border {
+        height: 1.8vw;
+        width: 1.8vw;
+    }
+
+    .disc_borderless {
+        height: 1.8vw;
+        width: 1.8vw;
+    }
+
+    .game_info_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+    }
+
+    .game_info {
+        padding: 1vw;
+        margin-top: 100%;
+    }
+
+    .game_button_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 2;
+    }
+
+    .game_button {
+        padding: 1vw;
+        margin-bottom: 50%;
+    }
+
+    .game_new_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 3;
+    }
+
+    .game_new {
+        font-size: 0.7vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        margin-bottom: 100%;
+        margin-top: 0;
+    }
+    
+}
+
+@media only screen and (min-width: 2560px) and (min-height: 1160px) {
+
+    .game {
+        font-size: 0.7vw;
+    }
+    
+    .game_board_div {
+        width: 44vw;
+        height: 44vw;
+    }
+
+    .square  {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .disc_border {
+        height: 2vw;
+        width: 2vw;
+    }
+
+    .disc_borderless {
+        height: 2vw;
+        width: 2vw;
+    }
+
+    .game_info_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+    }
+
+    .game_info {
+        padding: 1vw;
+        margin-top: 100%;
+    }
+
+    .game_button_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 2;
+    }
+
+    .game_button {
+        padding: 1vw;
+        margin-bottom: 50%;
+    }
+
+    .game_new_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 3;
+    }
+
+    .game_new {
+        font-size: 0.7vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        margin-bottom: 100%;
+        margin-top: 0;
+    }
+    
+}
+
+@media only screen and (min-width: 2560px) and (min-height: 1440px) {
+
+    .game {
+        font-size: 0.7vw;
+    }
+    
+    .game_board_div {
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .square  {
+        width: 2.3vw;
+        height: 2.3vw;
+    }
+
+    .disc_border {
+        height: 2.3vw;
+        width: 2.3vw;
+    }
+
+    .disc_borderless {
+        height: 2.3vw;
+        width: 2.3vw;
+    }
+
+    .game_info_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+    }
+
+    .game_info {
+        padding: 1vw;
+        margin-top: 100%;
+    }
+
+    .game_button_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 2;
+    }
+
+    .game_button {
+        padding: 1vw;
+        margin-bottom: 50%;
+    }
+
+    .game_new_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 3;
+    }
+
+    .game_new {
+        font-size: 0.7vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        margin-bottom: 100%;
+        margin-top: 0;
+    }
+    
+}
+
+@media only screen and (min-width: 3440px) and (min-height: 1440px) {
+
+    .game {
+        font-size: 0.7vw;
+    }
+    
+    .game_board_div {
+        width: 40vw;
+        height: 40vw;
+    }
+
+    .square  {
+        width: 1.7vw;
+        height: 1.7vw;
+    }
+
+    .disc_border {
+        height: 1.7vw;
+        width: 1.7vw;
+    }
+
+    .disc_borderless {
+        height: 1.7vw;
+        width: 1.7vw;
+    }
+
+    .game_info_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+    }
+
+    .game_info {
+        padding: 1vw;
+        margin-top: 100%;
+    }
+
+    .game_button_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 2;
+    }
+
+    .game_button {
+        padding: 1vw;
+        margin-bottom: 50%;
+    }
+
+    .game_new_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 3;
+    }
+
+    .game_new {
+        font-size: 0.7vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        margin-bottom: 100%;
+        margin-top: 0;
+    }
+    
+}
+
+@media only screen and (min-width: 3840px) and (min-height: 2160px) {
+
+    .game {
+        font-size: 0.7vw;
+    }
+    
+    .game_board_div {
+        width: 52vw;
+        height: 52vw;
+    }
+
+    .square  {
+        width: 2.3vw;
+        height: 2.3vw;
+    }
+
+    .disc_border {
+        height: 2.3vw;
+        width: 2.3vw;
+    }
+
+    .disc_borderless {
+        height: 2.3vw;
+        width: 2.3vw;
+    }
+
+    .game_info_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+    }
+
+    .game_info {
+        padding: 1vw;
+        margin-top: 100%;
+    }
+
+    .game_button_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 2;
+    }
+
+    .game_button {
+        padding: 1vw;
+        margin-bottom: 50%;
+    }
+
+    .game_new_div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 3;
+    }
+
+    .game_new {
+        font-size: 0.7vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        margin-bottom: 100%;
+        margin-top: 0;
+    }
+    
+}
